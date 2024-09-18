@@ -16,7 +16,7 @@ const adminSchema = require('./admin');
 // Initialize Firebase Admin
 
 serviceAccount.privateKey = serviceAccount.privateKey.replace(/\\n/g, '\n')
-console.log(serviceAccount)
+// console.log(serviceAccount)
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
   databaseURL: "https://sos-app-8ea89.firebaseio.com"
