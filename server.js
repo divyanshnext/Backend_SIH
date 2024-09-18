@@ -3,15 +3,20 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const admin = require('firebase-admin');
 const mongoose = require('mongoose');
+const dotenv=require('dotenv')
+dotenv.config();
 const fs = require('fs').promises;
 // Import Firebase credentials and MongoDB model
-const serviceAccount = require('./sos-app-8ea89-firebase-adminsdk-bufbn-382da1c6b5.json');
+const serviceAccount = require('./sos-app-8ea89-firebase-adminsdk-bufbn-11526161a9.js');
 const Zone = require('./zone'); // Ensure path is correct
 const URL = "mongodb+srv://hirez:admin@db.cxzjtyo.mongodb.net/?retryWrites=true&w=majority&appName=db";
 const stationSchema = require('./stationSchema');
 const getStationComplaintModel = require('./stationComplaint');
 const adminSchema = require('./admin');
 // Initialize Firebase Admin
+
+serviceAccount.privateKey = serviceAccount.privateKey.replace(/\\n/g, '\n')
+console.log(serviceAccount)
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
   databaseURL: "https://sos-app-8ea89.firebaseio.com"
