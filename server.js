@@ -159,7 +159,7 @@ const allRangeCheck = async (latitude, longitude) => {
 
 
 app.get('/',(req,res)=>{
-    res.status(200).json({message: "Hello World"})
+    res.status(200).json({message: "Hello 1 World"})
 })
 // Endpoint to check safety zone
 app.post('/check-safety-zone', async (req, res) => {
