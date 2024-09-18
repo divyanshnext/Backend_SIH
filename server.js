@@ -154,7 +154,7 @@ const allRangeCheck = async (latitude, longitude) => {
 
 
 app.get('/',(req,res)=>{
-    res.status(200).json({message: "HEllo world"})
+    res.status(200).json({message: "Hello World"})
 })
 // Endpoint to check safety zone
 app.post('/check-safety-zone', async (req, res) => {
@@ -213,3 +213,4 @@ app.post("/registerComplaint",async(req,res)=>{
 app.listen(5001, () => console.log('Server running on port 5001'));
 
 connect(); // Connect to MongoDB on server startup
+module.exports=app;
