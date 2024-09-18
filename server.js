@@ -5,7 +5,7 @@ const admin = require('firebase-admin');
 const mongoose = require('mongoose');
 const fs = require('fs').promises;
 // Import Firebase credentials and MongoDB model
-const serviceAccount = require('./sos-app-8ea89-firebase-adminsdk-bufbn-c596894790.json');
+const serviceAccount = require('./sos-app-8ea89-firebase-adminsdk-bufbn-382da1c6b5.json');
 const Zone = require('./zone'); // Ensure path is correct
 const URL = "mongodb+srv://hirez:admin@db.cxzjtyo.mongodb.net/?retryWrites=true&w=majority&appName=db";
 const stationSchema = require('./stationSchema');
@@ -187,10 +187,10 @@ app.get('/getAllDocs', async (req, res) => {
         }));
 
         // Send documents as JSON
-        const result = {
-          status:"success",
-          data:docs
-        }
+        // const result = {
+        //   status:"success",
+        //   data:docs
+        // }
         return res.send(docs);
     } catch (error) {
         console.error('Error fetching documents:', error);
